@@ -33,4 +33,4 @@ RUN         	apt update \
 				&& apt upgrade -y \
 				&& apt -y --no-install-recommends install ca-certificates curl  git wget
 				
-RUN			if [ "$(arch)" = "x86_64" ]; dpkg --add-architecture i386 && apt update && apt -y install lib32gcc libsdl2-2.0-0:i386; fi
+RUN			if [ "$(arch)" = "x86_64" ]; then dpkg --add-architecture i386 && apt update && apt -y install lib32gcc libsdl2-2.0-0:i386; fi
